@@ -1,0 +1,380 @@
+body {
+      margin-top: 20px;
+      background: #eee;
+    }
+
+    .invoice {
+      padding: 30px;
+    }
+
+    .invoice-name {
+      margin: 0px auto 5px auto;
+    }
+
+    .order-summary {
+      margin: 0px auto 5px auto;
+    }
+
+    .address-tag {
+      margin-bottom: 10px;
+    }
+
+    .invoice h2 {
+      margin-top: 0px;
+      line-height: 0.8em;
+    }
+
+    .invoice .small {
+      font-weight: 300;
+    }
+
+    .invoice hr {
+      margin-top: 10px;
+      border-color: #ddd;
+    }
+
+    .invoice .table tr.line {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .invoice .table td {
+      border: none;
+    }
+
+    .invoice .identity {
+      margin-top: 10px;
+      font-size: 1.1em;
+      font-weight: 300;
+    }
+
+    .invoice .identity strong {
+      font-weight: 600;
+    }
+
+    .grid {
+      position: relative;
+      width: 100%;
+      background: #fff;
+      color: #666666;
+      border-radius: 2px;
+      margin-bottom: 25px;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #666666 !important;
+      border-collapse: collapse;
+    }
+
+
+    table.tablenb,
+    table.tablenb>th,
+    table.tablenb>td {
+      border: 0px solid #666666 !important;
+      border-collapse: collapse;
+    }
+
+    abbr[title] {
+      border-bottom: 1px dotted;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    img {
+      border: 0;
+    }
+
+    hr {
+      height: 0;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+    }
+
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 0;
+    }
+
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    :after,
+    :before {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 10px;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #333;
+      background-color: #fff;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: 0;
+      border-top: 1px solid #eee;
+    }
+
+    h2,
+    h3 {
+      font-family: inherit;
+      font-weight: 500;
+      line-height: 1.1;
+      color: inherit;
+    }
+
+    h2 .small {
+      font-weight: 400;
+      line-height: 1;
+      color: #777;
+    }
+
+    h2,
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    h2 .small {
+      font-size: 65%;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    .small {
+      font-size: 85%;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    abbr[title] {
+      cursor: help;
+      border-bottom: 1px dotted #777;
+    }
+
+    address {
+      margin-bottom: 20px;
+      font-style: normal;
+      line-height: 1.42857143;
+    }
+
+    .container {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (min-width:768px) {
+      .container {
+        width: 100%;
+      }
+    }
+
+    @media (min-width:992px) {
+      .container {
+        width: 970px;
+      }
+    }
+
+    @media (min-width:1200px) {
+      .container {
+        width: 1170px;
+      }
+    }
+
+    .row {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    .col-md-12,
+    .col-xs-12,
+    .col-xs-6,
+    .col-xs-3,
+    .col-xs-4,
+    .col-xs-9,
+    .col-xs-8 {
+      position: relative;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .col-xs-12,
+    .col-xs-6,
+    .col-xs-3,
+    .col-xs-4,
+    .col-xs-9,
+    .col-xs-8 {
+      float: left;
+    }
+
+    .col-xs-12 {
+      width: 100%;
+    }
+
+    .col-xs-6 {
+      width: 50%;
+    }
+
+    .col-xs-4 {
+      width: 33%;
+    }
+
+    .col-xs-3 {
+      width: 25%;
+    }
+
+    .col-xs-8 {
+      width: 66.66%;
+    }
+
+    @media (min-width:992px) {
+      .col-md-12 {
+        float: left;
+      }
+
+      .col-md-12 {
+        width: 100%;
+      }
+    }
+
+    table {
+      background-color: transparent;
+    }
+
+    .table {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .table>tbody>tr>td,
+    .table>thead>tr>td {
+      padding: 8px;
+      line-height: 1.42857143;
+      vertical-align: top;
+      border-top: 1px solid #ddd;
+    }
+
+
+    .tablenb>tbody>tr>td,
+    .tablenb>thead>tr>td {
+      padding: 8px;
+      line-height: 1.42857143;
+      vertical-align: top;
+      border-top: 0px solid #ddd !important;
+      border: 0px solid #ddd !important;
+    }
+
+    .table>thead:first-child>tr:first-child>td {
+      border-top: 0;
+    }
+
+    .table-striped>tbody>tr:nth-of-type(odd) {
+      background-color: #f9f9f9;
+    }
+
+    .container:after,
+    .container:before,
+    .row:after,
+    .row:before {
+      display: table;
+      content: ' ';
+    }
+
+    .container:after,
+    .row:after {
+      clear: both;
+    }
+
+    /*! CSS Used from: Embedded */
+    body {
+      margin-top: 20px;
+      background: #eee;
+    }
+
+    .invoice {
+      padding: 30px;
+    }
+
+    .invoice h2 {
+      margin-top: 0px;
+      line-height: 0.8em;
+    }
+
+    .invoice .small {
+      font-weight: 300;
+    }
+
+    .invoice hr {
+      margin-top: 10px;
+      border-color: #ddd;
+    }
+
+    .invoice .table tr.line {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .invoice .table td {
+      border: none;
+    }
+
+    .grid {
+      position: relative;
+      width: 100%;
+      background: #fff;
+      color: #666666;
+      border-radius: 2px;
+      margin-bottom: 25px;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    table,
+    td {
+      border: 1px solid #666666 !important;
+      border-collapse: collapse;
+    }
+
+    body {
+      margin: 0px !important;
+    }
