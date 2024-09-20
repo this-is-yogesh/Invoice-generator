@@ -207,7 +207,7 @@ const Form = () => {
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        Invoice Date: <strong>${moment(new Date(data?.invoiceDate)).format("DD MMM, YYYY")}</strong>
+                        Invoice Date: <strong>${data?.invoiceDate&& moment(new Date(data?.invoiceDate)).format("DD MMM, YYYY")}</strong>
                       </address>
                     </div>
                     <div class='col-xs-12 text-left'>
@@ -217,7 +217,7 @@ const Form = () => {
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        Due Date: <strong>${moment(new Date(data?.dueDate)).format("DD MMM, YYYY")}</strong>
+                        Due Date: <strong>${data?.dueDate&& moment(new Date(data?.dueDate)).format("DD MMM, YYYY")}</strong>
                       </address>
                     </div>
                     <div class='col-xs-12 text-left'>
@@ -227,7 +227,7 @@ const Form = () => {
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        Order Date: <strong>${moment(new Date(data?.orderDate)).format("DD MMM, YYYY")}</strong>
+                        Order Date: <strong>${data?.orderDate && moment(new Date(data?.orderDate)).format("DD MMM, YYYY")}</strong>
                       </address>
                     </div>
                     <div class='col-xs-12 text-left'>
@@ -237,7 +237,7 @@ const Form = () => {
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        PO Date: <strong>${moment(new Date(data?.poDate)).format("DD MMM, YYYY")}</strong>
+                        PO Date: <strong>${data?.poDate&& moment(new Date(data?.poDate)).format("DD MMM, YYYY")}</strong>
                       </address>
                     </div>
                   </div>
