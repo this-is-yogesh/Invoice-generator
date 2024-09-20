@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./InvoiceForm.css";
 import html2pdf from 'html2pdf.js';
+import moment from "moment"
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -206,7 +207,7 @@ const Form = () => {
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        Invoice Date: <strong>${data?.invoiceDate}</strong>
+                        Invoice Date: <strong>${moment(new Date(data?.invoiceDate)).format("DD MMM, YYYY")}</strong>
                       </address>
                     </div>
                     <div class='col-xs-12 text-left'>
@@ -216,7 +217,7 @@ const Form = () => {
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        Due Date: <strong>${data?.dueDate}</strong>
+                        Due Date: <strong>${moment(new Date(data?.dueDate)).format("DD MMM, YYYY")}</strong>
                       </address>
                     </div>
                     <div class='col-xs-12 text-left'>
@@ -226,7 +227,7 @@ const Form = () => {
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        Order Date and Time: <strong>${data?.orderDate}</strong>
+                        Order Date: <strong>${moment(new Date(data?.orderDate)).format("DD MMM, YYYY")}</strong>
                       </address>
                     </div>
                     <div class='col-xs-12 text-left'>
@@ -236,7 +237,7 @@ const Form = () => {
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        PO Date: <strong>${data?.poDate}</strong>
+                        PO Date: <strong>${moment(new Date(data?.poDate)).format("DD MMM, YYYY")}</strong>
                       </address>
                     </div>
                   </div>
@@ -846,9 +847,9 @@ const Form = () => {
         </div>
 
         <div className="col-xs-6">
-          <label>Order Date and Time</label>
+          <label>Order Date</label>
           <input
-            type="datetime-local"
+            type="date"
             name="orderDate"
             value={formData.orderDate}
             onChange={handleChange}
