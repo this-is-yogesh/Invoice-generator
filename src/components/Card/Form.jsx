@@ -366,7 +366,7 @@ const Form = () => {
                         IGST9 (18%)
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;'>
-                      ${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(Math.floor(data?.orderItems[0]?.amount * 18) / 100)}
+                      ${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format((data?.orderItems[0]?.amount * 18) / 100)}
                       </td>
                     </tr>
                     <tr>
@@ -374,7 +374,7 @@ const Form = () => {
                         Total
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;'>
-                         ${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(Math.floor(data?.orderItems[0]?.amount * 18 / 100) + data?.orderItems[0]?.amount)}
+                         ${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format((data?.orderItems[0]?.amount * 18 / 100) + data?.orderItems[0]?.amount)}
                       </td>
                     </tr>
                     <tr>
