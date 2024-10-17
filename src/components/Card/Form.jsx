@@ -183,8 +183,8 @@ const Form = () => {
                   </svg>
 
                 </div>
-                <div class='col-xs-6 text-left'>
-                  <div style="font-size: 20px; font-weight: bold;">SNSG TRADING PRIVATE LIMITED</div>
+                <div class='col-xs-6 text-left' style="color:black; font-weight:900">
+                  <div style="font-size: 20px; font-weight:900; color:black; font-weight:900">SNSG TRADING PRIVATE LIMITED</div>
                   D. No. 8-2-579/A/12, Road No 8,<br />Banjara Hills, Khairatabad,<br />Hyderabad-500034,<br />Telangana
                   <br />
                   GSTIN 36ABLCS7498B1ZU
@@ -275,8 +275,8 @@ const Form = () => {
             <div class='row'>
               <div class='col-xs-12'>
                 <table cellpadding='4' cellspacing='0' class='checkouttable' style='background-color: #ffffff; font-family: sans-serif; font-size: 14px; width: 100%; color: #666;
-              border: 1px solid #fff; border-collapse: collapse;'>
-                  <h3 class='order-summary'>ORDER SUMMARY</h3>
+              border: 1px solid #fff; border-collapse: collapse;color:black; font-weight:900'>
+                  <h3 class='order-summary' style="color:black; font-weight:900">ORDER SUMMARY</h3>
                   <thead>
                     <tr>
                       <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: left; padding: 5px'
@@ -305,7 +305,7 @@ const Form = () => {
                       </td>
 
                       <td
-                        style='text-align: center; border: 1px solid #e3e3e3; border-collapse: collapse; height: 32px;text-align: right; padding: 5px'
+                        style='text-align: center; border: 1px solid #e3e3e3; border-collapse: collapse; height: 32px;text-align: right; padding: 5px;color:black; font-weight:900'
                         colspan='2'>
                         ${data?.orderItems?.[0]?.qty} <br />
                         Kg
@@ -325,7 +325,7 @@ const Form = () => {
               </div>
             </div>
             <div class='row'>
-              <div class='col-xs-8 text-left' style="font-size: 11px;">
+              <div class='col-xs-8 text-left' style="font-size: 11px;color:black; font-weight:900">
                      <div>
                   <br/><br/>
                   Remarks: <br/>${data?.remarksItems?.description.split('\n').join("<br/>")}<br/>
@@ -338,15 +338,15 @@ const Form = () => {
                   <tbody>
 
                     <tr>
-                      <td style='text-align: center;height: 32px;'>
+                      <td style='text-align: center;height: 32px; color:black; font-weight:900'>
                         Sub Total
                       </td>
-                      <td style='text-align: right;height: 32px; padding-right: 10px;'>
+                      <td style='text-align: right;height: 32px; padding-right: 10px;color:black; font-weight:900'>
                       ${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(data?.orderItems?.[0]?.amount)}
                       </td>
                     </tr>
                     <tr>
-                      <td style='text-align: center;height: 32px;'>
+                      <td style='text-align: center;height: 32px;color:black; font-weight:900'>
                         SGST9 (9%)
                       </td>
                       <td style='text-align: right;height: 32px;  padding-right: 10px;'>
@@ -354,7 +354,7 @@ const Form = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td style='text-align: center;height: 32px;'>
+                      <td style='text-align: center;height: 32px;color:black; font-weight:900'>
                         CGST9 (9%)
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;'>
@@ -362,23 +362,23 @@ const Form = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td style='text-align: center;height: 32px;'>
+                      <td style='text-align: center;height: 32px;color:black; font-weight:900'>
                         IGST9 (18%)
                       </td>
-                      <td style='text-align: right;height: 32px; padding-right: 10px;'>
+                      <td style='text-align: right;height: 32px; padding-right: 10px;color:black; font-weight:900'>
                       ${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format((data?.orderItems[0]?.amount * 18) / 100)}
                       </td>
                     </tr>
                     <tr>
-                      <td style='text-align: center;height: 32px;'>
+                      <td style='text-align: center;height: 32px;color:black; font-weight:900'>
                         Total
                       </td>
-                      <td style='text-align: right;height: 32px; padding-right: 10px;'>
+                      <td style='text-align: right;height: 32px; padding-right: 10px;color:black; font-weight:900'>
                          ${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format((data?.orderItems[0]?.amount * 18 / 100) + data?.orderItems[0]?.amount)}
                       </td>
                     </tr>
                     <tr>
-                      <td style='text-align: center;height: 80px; border-top: 1px solid #666666 !important;'
+                      <td style='text-align: center;height: 80px; border-top: 1px solid #666666 !important;color:black; font-weight:900'
                         colspan='2'>
                         <br /><br /><br />
                         Authorized signature
@@ -422,10 +422,14 @@ const Form = () => {
 
     .order-summary-form {
       margin: 0px auto 5px auto;
+      color:black;
+      font-weight:900;
     }
 
     .address-tag {
       margin-bottom: 10px;
+      color:black;
+      font-weight:900 !important;
     }
 
     .invoice h2 {
@@ -471,10 +475,16 @@ const Form = () => {
     }
 
     table,
-    th,
-    td {
-      border: 1px solid #666666 !important;
+    th {
+      color:black;
+      font-weight:900;
+       border: 1px solid #000000 !important;
       border-collapse: collapse;
+    },
+    td {
+      border: 2px solid #000000 !important;
+      border-collapse: collapse;
+
     }
 
 
