@@ -347,7 +347,7 @@ const Form = () => {
                     </tr>
                     <tr>
                       <td style='text-align: center;height: 32px;color:black; font-weight:900'>
-                        SGST9 (9%)
+                        SGST (9%)
                       </td>
                       <td style='text-align: right;height: 32px;  padding-right: 10px;'>
                         
@@ -355,7 +355,7 @@ const Form = () => {
                     </tr>
                     <tr>
                       <td style='text-align: center;height: 32px;color:black; font-weight:900'>
-                        CGST9 (9%)
+                        CGST (9%)
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;'>
                         
@@ -363,7 +363,7 @@ const Form = () => {
                     </tr>
                     <tr>
                       <td style='text-align: center;height: 32px;color:black; font-weight:900'>
-                        IGST9 (18%)
+                        IGST (18%)
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;color:black; font-weight:900'>
                       ${new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format((data?.orderItems[0]?.amount * 18) / 100)}
