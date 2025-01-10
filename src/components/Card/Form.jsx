@@ -24,7 +24,9 @@ const Form = () => {
       address: "",
       gstin: "",
     },
-    orderItems: [{ itemName: "", hsn: "", qty: "", rate: "", amount: "" }],
+    orderItems: [
+      { itemName: "", hsn: "", qty: "", rate: "", amount: "", deliveryQty: "" },
+    ],
     remarksItems: { description: "" },
   });
 
@@ -80,7 +82,14 @@ const Form = () => {
       ...formData,
       orderItems: [
         ...formData.orderItems,
-        { itemName: "", hsn: "", qty: "", rate: "", amount: "" },
+        {
+          itemName: "",
+          hsn: "",
+          qty: "",
+          rate: "",
+          amount: "",
+          deliveryQty: "",
+        },
       ],
     });
   };
@@ -857,7 +866,7 @@ const Form = () => {
               </div>
               <div class='row'>
                 <div class='col-xs-12 text-right' style="margin-top: -40px;">
-                     <h5 class='invoice-name credit-note' > Credit Note </h5>
+                     <h4 class='invoice-name credit-note' > Credit Note </h4>
                   <h2 class='invoice-name'> INVOICE </h2>
                 </div>
               </div>
@@ -970,8 +979,8 @@ const Form = () => {
                         colspan='2'>Item</th>
                       <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: left; padding: 5px'
                         colspan='2'>HSN/SAC</th>
-                      <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: right;; padding: 5px'
-                        colspan='2'>Qty</th>
+                                <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: right;; padding: 5px'
+                        colspan='2'>Delivery Qty</th>
                       <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: right; padding: 5px'
                         colspan='2'>Rate</th>
                       <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: right; padding: 5px'
@@ -988,15 +997,14 @@ const Form = () => {
                       <td
                         style='text-align: center; border: 1px solid #e3e3e3; border-collapse: collapse; height: 32px;text-align: left; padding: 5px'
                         colspan='2'>
-                    
                       </td>
-
-                      <td
+                          <td
                         style='text-align: center; border: 1px solid #e3e3e3; border-collapse: collapse; height: 32px;text-align: right; padding: 5px;color:black; font-weight:900'
                         colspan='2'>
-                       <br />
-                        Kg
+                        ${data?.orderItems?.[0]?.deliveryQty} <br />
+                         Kg
                       </td>
+           
                       <td style='text-align: center; border: 1px solid #e3e3e3; border-collapse:
                       collapse; height: 32px; text-align: right;; padding: 5px' colspan='2'>
                   
@@ -1663,6 +1671,7 @@ const Form = () => {
                 <th>Item</th>
                 <th>HSN/SAC</th>
                 <th>Qty</th>
+                <th>Delivery Qty</th>
                 <th>Rate</th>
                 <th>Amount</th>
                 <th>Actions</th>
@@ -1693,6 +1702,14 @@ const Form = () => {
                       name="qty"
                       value={item.qty}
                       onChange={e => handleOrderChange(e, index, "qty")}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="deliveryQty"
+                      value={item.deliveryQty}
+                      onChange={e => handleOrderChange(e, index, "deliveryQty")}
                     />
                   </td>
                   <td>
