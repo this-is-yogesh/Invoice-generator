@@ -857,6 +857,7 @@ const Form = () => {
               </div>
               <div class='row'>
                 <div class='col-xs-12 text-right' style="margin-top: -40px;">
+                     <h5 class='invoice-name credit-note' > Credit Note </h5>
                   <h2 class='invoice-name'> INVOICE </h2>
                 </div>
               </div>
@@ -1105,6 +1106,9 @@ const Form = () => {
     .invoice-name {
       margin: 0px auto 5px auto;
     }
+    .credit-note {
+      margin-bottom :30px
+      }
 
     .order-summary-form {
       margin: 0px auto 5px auto;
