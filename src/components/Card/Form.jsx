@@ -893,7 +893,9 @@ const Form = () => {
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        Terms: <strong>${data?.terms}</strong>
+                        Credit Note Date: <strong>${moment(
+                          new Date(data?.dueDate)
+                        ).format("DD MMM, YYYY")}</strong>
                       </address>
                     </div>
                     <div class='col-xs-12 text-left'>
