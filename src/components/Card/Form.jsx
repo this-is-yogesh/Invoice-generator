@@ -1047,7 +1047,7 @@ const Form = () => {
                         SGST (9%)
                       </td>
                       <td style='text-align: right;height: 32px;  padding-right: 10px;'>
-                        
+                        0.00
                       </td>
                     </tr>
                     <tr>
@@ -1055,7 +1055,7 @@ const Form = () => {
                         CGST (9%)
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;'>
-                        
+                      0.00
                       </td>
                     </tr>
                     <tr>
@@ -1063,7 +1063,7 @@ const Form = () => {
                         IGST (18%)
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;color:black; font-weight:900'>
-                
+                  0.00
                       </td>
                     </tr>
                     <tr>
