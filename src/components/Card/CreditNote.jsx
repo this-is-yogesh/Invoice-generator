@@ -102,14 +102,14 @@ const Form = () => {
     });
   };
 
-  const handleSubmit = e => {
+  const generatecreditnote = e => {
     e.preventDefault();
-    const invoiceHtmlPage1 = generateInvoiceHtml(formData);
-    const tempContainer = document.createElement("div");
-    tempContainer.innerHTML = invoiceHtmlPage1;
+    const invoiceHtmlPage2 = generateInvoiceHtmlSecondPage(formData);
+    const tempContainer2 = document.createElement("div");
+    tempContainer2.innerHTML = invoiceHtmlPage2;
 
     html2pdf()
-      .from(tempContainer)
+      .from(tempContainer2)
       .set({
         margin: [0, 0, 0, 0],
         filename: "invoice.pdf",
@@ -130,12 +130,12 @@ const Form = () => {
       })
       .save();
 
-    const newWindow = window.open();
-    newWindow.document.write(invoiceHtmlPage1);
-    newWindow.document.close();
+    const newWindow2 = window.open();
+    newWindow2.document.write(invoiceHtmlPage2);
+    newWindow2.document.close();
   };
 
-  function generateInvoiceHtml(data) {
+  function generateInvoiceHtmlSecondPage(data) {
     return `
   <div class='container'>
     <div class='row'>
@@ -171,6 +171,7 @@ const Form = () => {
               </div>
               <div class='row'>
                 <div class='col-xs-12 text-right' style="margin-top: -40px;">
+                     <h4 class='invoice-name credit-note' > Credit Note </h4>
                   <h2 class='invoice-name'> INVOICE </h2>
                 </div>
               </div>
@@ -180,14 +181,14 @@ const Form = () => {
                   <div class='row'>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        Invoice Number: <strong>${
+                        Original Invoice Number: <strong>${
                           data?.invoiceNumber
                         }</strong><br>
                       </address>
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        Invoice Date: <strong>${
+                        Original Invoice Date: <strong>${
                           data?.invoiceDate &&
                           moment(new Date(data?.invoiceDate)).format(
                             "DD MMM, YYYY"
@@ -197,7 +198,9 @@ const Form = () => {
                     </div>
                     <div class='col-xs-12 text-left'>
                       <address class='address-tag'>
-                        Terms: <strong>${data?.terms}</strong>
+                        Credit Note Date: <strong>${moment(
+                          new Date(data?.dueDate)
+                        ).format("DD MMM, YYYY")}</strong>
                       </address>
                     </div>
                     <div class='col-xs-12 text-left'>
@@ -240,7 +243,7 @@ const Form = () => {
                 </div>
                 <div class='col-xs-6 text-left'>
                   <address class='address-tag'>
-                    Place of supply: <strong>${data?.placeOfSupply}</strong>
+                    Credit Note: <strong>1</strong>
                   </address>
                 </div>
 
@@ -283,18 +286,17 @@ const Form = () => {
                         colspan='2'>Item</th>
                       <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: left; padding: 5px'
                         colspan='2'>HSN/SAC</th>
-                      <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: right;; padding: 5px'
-                        colspan='2'>Qty</th>
+                                <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: right;; padding: 5px'
+                        colspan='2'>Delivery Qty</th>
                       <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: right; padding: 5px'
                         colspan='2'>Rate</th>
                       <th style='border: 1px solid #e3e3e3; border-collapse: collapse;text-align: right; padding: 5px'
                         colspan='2'>Amount</th>
                     </tr>
                   </thead>
-                  
-                  ${data.orderItems
-                    .map(
-                      item => `
+${data.orderItems
+  .map(
+    item => `
                 <tr>
                   <td style='text-align: center; border: 1px solid #e3e3e3; border-collapse: collapse; height: 32px; text-align: left; padding: 5px' colspan='2'>
                     ${item.itemName}<br />
@@ -316,8 +318,8 @@ const Form = () => {
                   </td>
                 </tr>
               `
-                    )
-                    .join("")}
+  )
+  .join("")}
                 </table>
               </div>
             </div>
@@ -341,10 +343,7 @@ const Form = () => {
                         Sub Total
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;color:black; font-weight:900'>
-                      ${new Intl.NumberFormat("en-IN", {
-                        style: "currency",
-                        currency: "INR",
-                      }).format(data?.orderItems?.[0]?.amount)}
+                     
                       </td>
                     </tr>
                     <tr>
@@ -352,7 +351,7 @@ const Form = () => {
                         SGST (9%)
                       </td>
                       <td style='text-align: right;height: 32px;  padding-right: 10px;'>
-                        
+                        0.00
                       </td>
                     </tr>
                     <tr>
@@ -360,7 +359,7 @@ const Form = () => {
                         CGST (9%)
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;'>
-                        
+                      0.00
                       </td>
                     </tr>
                     <tr>
@@ -368,10 +367,7 @@ const Form = () => {
                         IGST (18%)
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;color:black; font-weight:900'>
-                      ${new Intl.NumberFormat("en-IN", {
-                        style: "currency",
-                        currency: "INR",
-                      }).format((data?.orderItems[0]?.amount * 18) / 100)}
+                  0.00
                       </td>
                     </tr>
                     <tr>
@@ -379,13 +375,7 @@ const Form = () => {
                         Total
                       </td>
                       <td style='text-align: right;height: 32px; padding-right: 10px;color:black; font-weight:900'>
-                         ${new Intl.NumberFormat("en-IN", {
-                           style: "currency",
-                           currency: "INR",
-                         }).format(
-                           (data?.orderItems[0]?.amount * 18) / 100 +
-                             data?.orderItems[0]?.amount
-                         )}
+                
                       </td>
                     </tr>
                     <tr>
@@ -430,6 +420,9 @@ const Form = () => {
     .invoice-name {
       margin: 0px auto 5px auto;
     }
+    .credit-note {
+      margin-bottom :30px
+      }
 
     .order-summary-form {
       margin: 0px auto 5px auto;
@@ -815,7 +808,7 @@ const Form = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
+    <form onSubmit={generatecreditnote} className="form-container">
       <h1
         style={{
           padding: "5px",
@@ -824,7 +817,7 @@ const Form = () => {
           textAlign: "center",
         }}
       >
-        Invoice Generator
+        Credit Note Generator
       </h1>
       <div className="row">
         <div className="col-xs-6">
@@ -1073,8 +1066,12 @@ const Form = () => {
         </div>
       </div>
       <div className="button-wrapper">
-        <button type="submit" className="submit-btn">
-          Generate Invoice
+        <button
+          type="submit"
+          className="submit-btn"
+          onClick={generatecreditnote}
+        >
+          Generate Credit Note
         </button>
       </div>
     </form>
